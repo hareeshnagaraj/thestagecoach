@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="img/stagecoachlogo.png" type="image/x-icon"/>
+	<title>The Stage Coach</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/owl.carousel.js"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAEby7YD0fAH-SKQamGMydNJtK-oL7g6vA&sensor=true">
+    </script>
+	<link href='http://fonts.googleapis.com/css?family=Fauna+One|Roboto:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='css/style.css' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+function scroll(inputstring){
+var offset = $(this).offset();
+$('html, body').animate({scrollTop: $(inputstring).offset().top}, 1000);
+}
+
+
+</script>
+<script type="text/javascript">
+  function initialize() {
+    var mapOptions = {
+	  center: new google.maps.LatLng(38.8526, -77.3044),
+	  disableDefaultUI: true,
+      zoom: 10
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<style>
+
+.innerBox{
+	width:100%;
+	height:100%;
+	background-image:url("img/pic9.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+}
+
+.downArrow{
+	position: absolute;
+	left:50%;
+	top:70%;
+	border-radius: 50%;
+	width: 50px;
+	height:50px;
+	margin-left: -22px;
+	text-align: center;
+	background-color: rgba(202,223,122,0.8);
+}
+.downArrow > img {
+width: 40px;
+cursor: pointer;
+margin-top: 6px;
+}
+
+
+#pictureBox > img{
+	width: 100%;
+}
+#secondBoxInfo{
+	width: 100%;
+	margin:auto;
+	height: 800px;
+
+}
+
+
+</style>
+<script>
+var drop = 0;
+$(document).ready(function(){
+	$("#downArrow").click(function(){
+		scroll("#secondBox");
+	});
+	$("#hamburger").click(function(){
+		if(drop == 0){
+			$("#dropdown").animate({'height':'210px'},500);
+			drop = 1;
+		}
+		else{
+			$("#dropdown").animate({'height':'0px'},500);
+
+			drop = 0;
+		}
+	});
+	$(".logo").click(function(){
+		window.location = "index.html";
+	});
+
+});
+</script>
+
+</head>
+<body>
+<div id="nav">
+	<div class="logo" style="cursor:pointer;"> 
+		<img src="img/stagecoachlogo.png" />
+	</div>
+	<ul>
+		<a href="about2.html"><li>About Us</li></a>
+		<a href="about.html"><li>What We Do</li></a>
+		<a href="work.html"><li>Our Work</li></a>
+		<a href="services.html"><li>Services</li></a>
+		<a href="testimonials.html"><li>Testimonials</li></a>
+		<a href="contact.html" ><li style="background-color:rgb(202,223,122);color:white;">Contact</li></a>
+	</ul>
+	<div id="hamburger"><img src="img/hamburger_green.png" /></div>
+	<div id="dropdown">
+		<div>About Us</div>
+		<div>Our Work</div>
+		<div>Services</div>
+		<div>Testimonials</div>
+		<div>Contact</div>
+
+	</div>
+</div>
+<div class="serviceWrap">
+	<div id="map-canvas"></div>
+	<div id="map-contact">Contact Us: <br> thestagecoachva@gmail.com</div>
+</div>
+<div class="footer">
+	<ul>
+		<li>&copy 2014 The Stage Coach LLC</li>
+	</ul>
+</div>
+</body>
+</html>

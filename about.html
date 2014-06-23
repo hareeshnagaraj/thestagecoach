@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="img/stagecoachlogo.png" type="image/x-icon"/>
+	<title>The Stage Coach</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/owl.carousel.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Fauna+One|Roboto:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='css/style.css' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+function scroll(inputstring){
+var offset = $(this).offset();
+$('html, body').animate({scrollTop: $(inputstring).offset().top}, 1000);
+}
+
+
+</script>
+<style>
+
+.innerBox{
+	width:100%;
+	height:100%;
+	background-image:url("img/pic9.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+}
+
+.downArrow{
+	position: absolute;
+	left:50%;
+	top:70%;
+	border-radius: 50%;
+	width: 50px;
+	height:50px;
+	margin-left: -22px;
+	text-align: center;
+	background-color: rgba(202,223,122,0.8);
+}
+.downArrow > img {
+width: 40px;
+cursor: pointer;
+margin-top: 6px;
+}
+
+
+#pictureBox > img{
+	width: 100%;
+}
+#secondBoxInfo{
+	width: 100%;
+	margin:auto;
+	height: 800px;
+
+}
+
+
+</style>
+<script>
+var drop = 0;
+$(document).ready(function(){
+	$("#downArrow").click(function(){
+		scroll("#secondBox");
+	});
+	$("#hamburger").click(function(){
+		if(drop == 0){
+			$("#dropdown").animate({'height':'210px'},500);
+			drop = 1;
+		}
+		else{
+			$("#dropdown").animate({'height':'0px'},500);
+
+			drop = 0;
+		}
+	});
+	$(".logo").click(function(){
+		window.location = "index.html";
+	});
+
+});
+</script>
+
+</head>
+<body>
+<div id="nav">
+	<div class="logo" style="cursor:pointer;"> 
+		<img src="img/stagecoachlogo.png" />
+	</div>
+	<ul>
+		<a href="about2.html"><li>About Us</li></a>
+		<a href="about.html"><li style="background-color:rgb(202,223,122);color:white;">What We Do</li></a>
+		<a href="work.html"><li>Our Work</li></a>
+		<a href="services.html"><li>Services</li></a>
+		<a href="testimonials.html"><li>Testimonials</li></a>
+		<a href="contact.html"><li>Contact</li></a>
+	</ul>
+	<div id="hamburger"><img src="img/hamburger_green.png" /></div>
+	<div id="dropdown">
+		<div>About Us</div>
+		<div>Our Work</div>
+		<div>Services</div>
+		<div>Testimonials</div>
+		<div>Contact</div>
+
+	</div>
+</div>
+<div class="aboutWrap">
+	<div class="aboutCover">
+		<div class="aboutCoverText">Home Stagers</div>
+	</div>
+	<div class="aboutSub">In today's competitive real estate market, it is important to understand the difference between living in a home, and staging and photographing a house. It is a well-known fact that staging your house is a good investment. Staged houses, if priced properly, will sell in the shortest amount of time for the most amount of money.<br><br>We offer a fresh and objective perspective and know how to highlight your home's best features and minimize its flaws. If a buyer cannot visually start "moving themselves in," a potential sale is lost. We easily solve problems with clutter, color, and flow to create a warm, inviting and positive first impression -- whether that first impression begins online or in person.<br><br>We can stage a single room or a whole house. We understand the subtle differences between staging for a walk-through, and staging for marketing photography.</div>
+	<div class="aboutBreak">
+		<div class="aboutCoverText" style="margin-top:1%;">Problem Solvers</div>
+	</div>
+	<div class="aboutSub" style="padding-bottom:10px;">We help homeowners solve problems ranging from fixture and paint color choices to furniture placement. We'll pull everything together to reflect your personal style. We work within any budget (including no budget). Using what you have, we can make your home function better and feel refreshed.</div>
+
+</div>
+<div class="footer">
+	<ul>
+		<li>&copy 2014 The Stage Coach LLC</li>
+	</ul>
+</div>
+</body>
+</html>

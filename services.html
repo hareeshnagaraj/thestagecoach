@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="img/stagecoachlogo.png" type="image/x-icon"/>
+	<title>The Stage Coach</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/owl.carousel.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Fauna+One|Roboto:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='css/style.css' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+function scroll(inputstring){
+var offset = $(this).offset();
+$('html, body').animate({scrollTop: $(inputstring).offset().top}, 1000);
+}
+
+
+</script>
+<style>
+
+.innerBox{
+	width:100%;
+	height:100%;
+	background-image:url("img/pic9.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+}
+
+.downArrow{
+	position: absolute;
+	left:50%;
+	top:70%;
+	border-radius: 50%;
+	width: 50px;
+	height:50px;
+	margin-left: -22px;
+	text-align: center;
+	background-color: rgba(202,223,122,0.8);
+}
+.downArrow > img {
+width: 40px;
+cursor: pointer;
+margin-top: 6px;
+}
+
+
+#pictureBox > img{
+	width: 100%;
+}
+#secondBoxInfo{
+	width: 100%;
+	margin:auto;
+	height: 800px;
+
+}
+
+
+</style>
+<script>
+var drop = 0;
+$(document).ready(function(){
+	$("#downArrow").click(function(){
+		scroll("#secondBox");
+	});
+	$("#hamburger").click(function(){
+		if(drop == 0){
+			$("#dropdown").animate({'height':'210px'},500);
+			drop = 1;
+		}
+		else{
+			$("#dropdown").animate({'height':'0px'},500);
+
+			drop = 0;
+		}
+	});
+	$(".logo").click(function(){
+		window.location = "index.html";
+	});
+
+});
+</script>
+
+</head>
+<body>
+<div id="nav">
+	<div class="logo" style="cursor:pointer;"> 
+		<img src="img/stagecoachlogo.png" />
+	</div>
+	<ul>
+		<a href="about2.html"><li>About Us</li></a>
+		<a href="about.html"><li>What We Do</li></a>
+		<a href="work.html"><li>Our Work</li></a>
+		<a href="services.html" ><li style="background-color:rgb(202,223,122);color:white;">Services</li></a>
+		<a href="testimonials.html"><li>Testimonials</li></a>
+		<a href="contact.html"><li>Contact</li></a>
+	</ul>
+	<div id="hamburger"><img src="img/hamburger_green.png" /></div>
+	<div id="dropdown">
+		<div>About Us</div>
+		<div>Our Work</div>
+		<div>Services</div>
+		<div>Testimonials</div>
+		<div>Contact</div>
+
+	</div>
+</div>
+<div class="serviceWrap">
+	<div class="serviceTitle">Services</div>
+	<div class="serviceObj">
+		<div class="serviceObjTitle">DIY Fly-By</div>
+		<div class="serviceObjBody">With you, we tour your home, and offer recommendations based on your particular needs. You take notes, and do the work. We can provide hands-on assistance, if needed, for an additional fee.</div>
+	</div>
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:190px;">Written Consultation</div>
+		<div class="serviceObjBody">We provide a detailed room-by-room analysis with recommendations for the staging of your home. You can do the work, or hire us for an additional fee.</div>
+	</div>
+
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:160px;">Hands-On Staging</div>
+		<div class="serviceObjBody">We stage the entire house or just a room or two. Our preference is to work with your furnishings and to supplant or rent additional items only if necessary.</div>
+	</div>
+	
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:310px;">Real Estate Photography Assistance</div>
+		<div class="serviceObjBody">We ensure a property photographs at its best. According to the National Association of Realtors, nine out of ten homebuyers begin their search online. Staging a house for a walk through and preparing it for photography are not the same. Marketing photography has become very sophisticated; with the use of fusion photography, small details -- which are sometimes overlooked -- are critical.</div>
+	</div>
+
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:220px;">Everyday Living Re-fresh</div>
+		<div class="serviceObjBody">Does your home need a little lift? We can help pull it together whether you've got money to spend, or not. We can give advice or take you shopping to look for the finishing touches. We'll work with one room, or the whole house.</div>
+	</div>
+
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:175px;">New Home move-in</div>
+		<div class="serviceObjBody">Moving into a new property can be overwhelming. We can help with furniture plans, accessory placement and paint color choice.</div>
+	</div>
+
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:195px;">Downsizing move-out</div>
+		<div class="serviceObjBody">We can help "downsizers" choose what furnishings and fixtures will work in a smaller home. We can also make suggestions for what to do with the items that won't be moving.</div>
+	</div>
+
+	<div class="serviceObj">
+		<div class="serviceObjTitle" style="width:195px;">Additional Assistance</div>
+		<div class="serviceObjBody">We can help in any number of ways. Give us a call!</div>
+	</div>
+
+</div>
+<div class="footer">
+	<ul>
+		<li>&copy 2014 The Stage Coach LLC</li>
+	</ul>
+</div>
+</body>
+</html>
