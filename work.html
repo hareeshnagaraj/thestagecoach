@@ -11,16 +11,17 @@
 	<link href='css/style.css' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript">
+var count = 0;
 function scroll(inputstring){
 var offset = $(this).offset();
 $('html, body').animate({scrollTop: $(inputstring).offset().top}, 1000);
 }
 
-function modal(picture){
+function modal(picture,id){
 	
 	$("#modalpic").attr('src',picture);
 	$("#modalbg").show();
-
+	count = id;
 }
 
 </script>
@@ -74,6 +75,9 @@ margin-top: 6px;
 </style>
 <script>
 var drop = 0;
+
+var pics = ['after_guest_bedroom.jpg','after_foyer.jpg','after_bathroom.jpg','after_bathroom2.jpg','after_bedroom.jpg','after_bedroom2.jpg','after_living.jpg','after_living2.jpg','living room before (view 2).jpg','living room after (view 2).jpg','basement before (view 2).jpg','basement after (view 2).jpg','basement before (view 3).jpg','basement after (view 3).jpg','preteen room after.jpg','black and red br before.jpg','black and red bedroom after.jpg','Red DR.jpg','Ellen\'s kitchen.jpg','Ellen\'s kitchen 2.jpg','Ellen\'s DR.jpg','study.jpg'];
+
 $(document).ready(function(){
 	$("#downArrow").click(function(){
 		scroll("#secondBox");
@@ -95,72 +99,22 @@ $(document).ready(function(){
 	$("#closewhite").click(function(){
 		$("#modalbg").fadeOut();
 	});
+	$("#modalpic").click(function(){
+		count++;
+		if(count >= (pics.length - 1) ){
+			count = 0;
+		
+		}
+		var next = count;
+		console.log("next" + next + " pics.length : " + pics.length);
 
-	$("#living").click(function(){
-		$("#living").css({'background-color':'rgb(202,223,122)','color':'white'});
-		$("#master").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#kitchen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#laundry").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#basement").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#preteen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
+		var nextsrc = 'portfolio/'+pics[next];
 
-		$(".workRightInner").html("<div class=\"imageContainer\"><img  onclick=\"modal('portfolio/Living room before (view 1).jpg')\" src=\"portfolio/Living room before (view 1).jpg\"/><br>Before 1</div><div class=\"imageContainer\"><img onclick=\"modal('portfolio/living room before (view 2).jpg')\" src=\"portfolio/living room before (view 2).jpg\"/><br>Before 2</div><br><div class=\"imageContainer\"><img  onclick=\"modal('portfolio/Living room after (view 1).jpg')\"src=\"portfolio/Living room after (view 1).jpg\"/><br>After 1</div><div class=\"imageContainer\"><img  onclick=\"modal('portfolio/living room after (view 2).jpg')\" src=\"portfolio/living room after (view 2).jpg\"/><br>After 2</div>");
-	
-	});
-	$("#master").click(function(){
-		$("#master").css({'background-color':'rgb(202,223,122)','color':'white'});
-		$("#living").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#kitchen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#laundry").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#basement").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#preteen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
+		$(this).attr('src',nextsrc);
 
-		$(".workRightInner").html("<div class=\"imageContainer\"><img  onclick=\"modal('portfolio/master bedroom before (view 1).jpg')\" src=\"portfolio/master bedroom before (view 1).jpg\"/><br>Before 1</div><div class=\"imageContainer\"><img onclick=\"modal('portfolio/master before (view 2).jpg')\" src=\"portfolio/master before (view 2).jpg\"/><br>Before 2</div><br><div class=\"imageContainer\"><img  onclick=\"modal('portfolio/master bedroom after (view 1).jpg')\" src=\"portfolio/master bedroom after (view 1).jpg\"/><br>After 1</div><div class=\"imageContainer\"><img  onclick=\"modal('portfolio/master after (view 2).jpg')\" src=\"portfolio/master after (view 2).jpg\"/><br>After 2</div>");
-	});
-	$("#kitchen").click(function(){
-		$("#kitchen").css({'background-color':'rgb(202,223,122)','color':'white'});
-		$("#living").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#master").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#laundry").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#basement").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#preteen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-	
-		$(".workRightInner").html("<div class=\"imageContainer\"><img style='width:400px;margin-top:100px;' onclick=\"modal('portfolio/kitchen before.jpg')\" src=\"portfolio/kitchen before.jpg\"/><br>Before</div><div class=\"imageContainer\"><img style='width:450px;margin-top:100px;' onclick=\"modal('portfolio/kitchen after.jpg')\" src=\"portfolio/kitchen after.jpg\"/><br>After</div>");
 
 	});
-	$("#laundry").click(function(){
-		$("#laundry").css({'background-color':'rgb(202,223,122)','color':'white'});
-		$("#living").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#master").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#kitchen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#basement").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#preteen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-	
-		$(".workRightInner").html("<div class=\"imageContainer\"><img style='width:300px;margin-top:10px;' onclick=\"modal('portfolio/laundry before.jpg')\" src=\"portfolio/laundry before.jpg\"/><br>Before</div><div class=\"imageContainer\"><img style='width:450px;margin-top:100px;' onclick=\"modal('portfolio/laundry after.jpg')\" src=\"portfolio/laundry after.jpg\"/><br>After</div>");
 
-	});
-	$("#basement").click(function(){
-		$("#basement").css({'background-color':'rgb(202,223,122)','color':'white'});
-		$("#living").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#master").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#kitchen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#laundry").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#preteen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-	
-		$(".workRightInner").html("<div class=\"imageContainer\"><img style='width:180px;margin-top:90px;' onclick=\"modal('portfolio/basement before (view 1).jpg')\" src=\"portfolio/basement before (view 1).jpg\"/><br>Before 1</div><div class=\"imageContainer\"><img style='width:180px;margin-top:90px;' onclick=\"modal('portfolio/basement before (view 2).jpg')\" src=\"portfolio/basement before (view 2).jpg\"/><br>Before 2</div><div class=\"imageContainer\"><img style='width:180px;margin-top:90px;' onclick=\"modal('portfolio/basement before (view 3).jpg')\" src=\"portfolio/basement before (view 3).jpg\"/><br>Before 3</div><div class=\"imageContainer\"><img style='width:180px;margin-top:90px;' onclick=\"modal('portfolio/basement before (view 4).jpg')\" src=\"portfolio/basement before (view 4).jpg\"/><br>Before 4</div><br><div class=\"imageContainer\"><img style='width:180px;' onclick=\"modal('portfolio/basement after (view 1).jpg')\" src=\"portfolio/basement after (view 1).jpg\"/><br>After 1</div><div class=\"imageContainer\"><img style='width:180px;' onclick=\"modal('portfolio/basement after (view 2).jpg')\" src=\"portfolio/basement after (view 2).jpg\"/><br>After 2</div><div class=\"imageContainer\"><img style='width:180px;' onclick=\"modal('portfolio/basement after (view 3).jpg')\" src=\"portfolio/basement after (view 3).jpg\"/><br>After 3</div><div class=\"imageContainer\"><img style='width:180px;' onclick=\"modal('portfolio/basement after (view 4).jpg')\" src=\"portfolio/basement after (view 4).jpg\"/><br>After 4</div> ");
-
-	});
-	$("#preteen").click(function(){
-		$("#preteen").css({'background-color':'rgb(202,223,122)','color':'white'});
-		$("#living").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#master").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#kitchen").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#laundry").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-		$("#basement").css({'background-color':'white','color':'rgba(100,100,100,0.5)'});
-	
-		$(".workRightInner").html("<div class=\"imageContainer\"><img style='width:350px;margin-top:10px;' onclick=\"modal('portfolio/preteen room before.jpg')\" src=\"portfolio/preteen room before.jpg\"/><br>Before</div><div class=\"imageContainer\"><img style='width:360px;margin-top:100px;' onclick=\"modal('portfolio/preteen room after.jpg')\" src=\"portfolio/preteen room after.jpg\"/><br>After</div>");
-
-	});
 
 });
 </script>
@@ -210,155 +164,145 @@ $(document).ready(function(){
 		<div class="workRightInner">
 		
 		<!-- Default Case -->
-		<div class="imageContainer">
 
 		<div class="imageContainer">
-		<img onclick="modal('portfolio/living room before (view 2).jpg')" src="portfolio/living room before (view 2).jpg"/>
-		<br>Living Room Before
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/living room after (view 2).jpg')" src="portfolio/living room after (view 2).jpg"/>
-		<br>Living Room After
-		</div>
-		<br>
-
-		<div class="imageContainer">
-		<img onclick="modal('portfolio/master before (view 2).jpg')" src="portfolio/master before (view 2).jpg"/>
-		<br>Bedroom Before
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/master after (view 2).jpg')" src="portfolio/master after (view 2).jpg"/>
-		<br>Bedroom After
-		</div>
-		<br>
-
-		<div class="imageContainer" style="margin-left:0px;">
-		<img onclick="modal('portfolio/Master BR view 1 before.jpg')" src="portfolio/Master BR view 1 before.jpg"/>
-		<br>Bedroom Before 2
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/Master BR view 1 after.jpg')" src="portfolio/Master BR view 1 after.jpg"/>
-		<br>Bedroom After 2
-		</div>
-		<br>
-
-		<div class="imageContainer" style="margin-left:0px;">
-		<img onclick="modal('portfolio/Master BR view 2 before.jpg')" src="portfolio/Master BR view 2 before.jpg"/>
-		<br>Bedroom Before 3
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/Master BR view 2 after.jpg')" src="portfolio/Master BR view 2 after.jpg"/>
-		<br>Bedroom After 3
-		</div>
-		<br>
-
-		<div class="imageContainer" style="margin-left:0px;">
-		<img onclick="modal('portfolio/kitchen_before_2.jpg')" src="portfolio/kitchen_before_2.jpg"/>
-		<br>Kitchen Before
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/kitchen_after_2.jpg')" src="portfolio/kitchen_after_2.jpg"/>
-		<br>Kitchen After
-		</div>
-		<br>
-
-		<div class="imageContainer">
-		<img onclick="modal('portfolio/basement before (view 2).jpg')" src="portfolio/basement before (view 2).jpg"/>
-		<br>Basement Before 1
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/basement after (view 2).jpg')" src="portfolio/basement after (view 2).jpg"/>
-		<br>Basement After 1
-		</div>
-		<br>
-
-		<div class="imageContainer">
-		<img onclick="modal('portfolio/basement before (view 3).jpg')" src="portfolio/basement before (view 3).jpg"/>
-		<br>Basement Before 2
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/basement after (view 3).jpg')" src="portfolio/basement after (view 3).jpg"/>
-		<br>Basement After 2
-		</div>
-		<br>
-
-		<div class="imageContainer">
-		<img onclick="modal('portfolio/preteen room before.jpg')" src="portfolio/preteen room before.jpg"/>
-		<br>Preteen Room Before
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/preteen room after.jpg')" src="portfolio/preteen room after.jpg"/>
-		<br>Preteen Room After
-		</div>
-		<br>
-
-		<div id="after">AFTERS</div>
-		<div class="imageContainer" style="margin-left:0px;">
-		<img onclick="modal('portfolio/Master BR View 2 after close up.jpg')" src="portfolio/Master BR View 2 after close up.jpg"/>
-		<br>Master Bedroom After
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_guest_bedroom.jpg')" src="portfolio/after_guest_bedroom.jpg"/>
+		<img style="width:301px;" onclick="modal('portfolio/after_guest_bedroom.jpg',0)" src="portfolio/after_guest_bedroom.jpg"/>
 		<br>Guest Bedroom After
 		</div>
 
 		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/after_foyer.jpg')" src="portfolio/after_foyer.jpg"/>
+		<img style="width:338px;" onclick="modal('portfolio/after_foyer.jpg',1)" src="portfolio/after_foyer.jpg"/>
 		<br>Foyer After
 		</div>
-		<br>
+		
 
-		<div class="imageContainer" style="margin-left:130px;">
-		<img style="height:200px;width:initial;" onclick="modal('portfolio/after_bathroom.jpg')" src="portfolio/after_bathroom.jpg"/>
+		<div class="imageContainer" >
+		<img style="height:200px;width:initial;" onclick="modal('portfolio/after_bathroom.jpg',2)" src="portfolio/after_bathroom.jpg"/>
 		<br>Bathroom After 1
 		</div>
 
+
 		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_bathroom2.jpg')" src="portfolio/after_bathroom2.jpg"/>
+		<img style="width:301px;" onclick="modal('portfolio/after_bathroom2.jpg',3)" src="portfolio/after_bathroom2.jpg"/>
 		<br>Bathroom After 2
 		</div>
 
-		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_bedroom.jpg')" src="portfolio/after_bedroom.jpg"/>
-		<br>Bedroom After
-		</div>
-		<br>
-		<div class="imageContainer" >
-		<img style="height:200px;width:initial;" onclick="modal('portfolio/after_bedroom22.jpg')" src="portfolio/after_bedroom2.jpg"/>
-		<br>Bedroom After 2
-		</div>
 
 		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_living.jpg')" src="portfolio/after_living.jpg"/>
+		<img style="width:301px;" onclick="modal('portfolio/after_bedroom.jpg',4)" src="portfolio/after_bedroom.jpg"/>
+		<br>Bedroom After
+		</div>
+		
+
+		<div class="imageContainer" >
+		<img style="height:200px;width:initial;" onclick="modal('portfolio/after_bedroom2.jpg',5)" src="portfolio/after_bedroom2.jpg"/>
+		<br>Bedroom After 2
+		</div>
+		<br>
+
+		<div class="imageContainer">
+		<img style="width:301px;" onclick="modal('portfolio/after_living.jpg',6)" src="portfolio/after_living.jpg"/>
 		<br>Living Room After
 		</div>
 
 		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_living2.jpg')" src="portfolio/after_living2.jpg"/>
+		<img style="width:301px;" onclick="modal('portfolio/after_living2.jpg',7)" src="portfolio/after_living2.jpg"/>
 		<br>Living Room After 2
 		</div>
+		
+
+		<div class="imageContainer">
+		<img onclick="modal('portfolio/living room before (view 2).jpg',8)" src="portfolio/living room before (view 2).jpg"/>
+		<br>Living Room Before
+		</div>
 		<br>
+
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/living room after (view 2).jpg',9)" src="portfolio/living room after (view 2).jpg"/>
+		<br>Living Room After
+		</div>
+		
+		
+
+		<div class="imageContainer">
+		<img onclick="modal('portfolio/basement before (view 2).jpg',10)" src="portfolio/basement before (view 2).jpg"/>
+		<br>Basement Before 1
+		</div>
+
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/basement after (view 2).jpg',11)" src="portfolio/basement after (view 2).jpg"/>
+		<br>Basement After 1
+		</div>
+		
+
+		<div class="imageContainer">
+		<img onclick="modal('portfolio/basement before (view 3).jpg',12)" src="portfolio/basement before (view 3).jpg"/>
+		<br>Basement Before 2
+		</div>
+
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/basement after (view 3).jpg',13)" src="portfolio/basement after (view 3).jpg"/>
+		<br>Basement After 2
+		</div>
+		
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/preteen room after.jpg',14)" src="portfolio/preteen room after.jpg"/>
+		<br>Preteen Room After
+		</div>
+		<br>
+
+		<div class="imageContainer">
+		<img onclick="modal('portfolio/black and red br before.jpg',15)" src="portfolio/black and red br before.jpg"/>
+		<br>Basement Before 2
+		</div>
+
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/black and red bedroom after.jpg',16)" src="portfolio/black and red bedroom after.jpg"/>
+		<br>Basement After 2
+		</div>
+		
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/Red DR.jpg',17)" src="portfolio/Red DR.jpg"/>
+		<br>Preteen Room After
+		</div>
+		<br>
+
+		<div class="imageContainer">
+		<img onclick="modal('portfolio/Ellen\'s kitchen.jpg',18)" src="portfolio/Ellen's kitchen.jpg"/>
+		<br>Basement Before 2
+		</div>
+
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/Ellen\'s kitchen 2.jpg',19)" src="portfolio/Ellen's kitchen 2.jpg"/>
+		<br>Basement After 2
+		</div>
+		
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/Ellen\'s DR.jpg',20)" src="portfolio/Ellen's DR.jpg"/>
+		<br>Preteen Room After
+		</div>
+		<br>
+
+		<div class="imageContainer">
+		<img style="width:338px;" onclick="modal('portfolio/study.jpg',21)" src="portfolio/study.jpg"/>
+		<br>Preteen Room After
+		</div>
+		<br>
+		
+
+
 
 	
 
 		</div>
 	</div>
-
-
-</div>
 <div class="footer">
 	<ul>
 		<li>&copy 2014 The Stage Coach LLC</li>
 	</ul>
 </div>
+
+</div>
+
 </body>
 </html>

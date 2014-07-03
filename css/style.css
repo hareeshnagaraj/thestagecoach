@@ -96,8 +96,8 @@ body,html{
 .bubble 
 {
 position: relative;
-width: 450px;
-height:180px;
+width: 70%;
+font-size:20px;
 padding: 10px;
 background: #FFFFFF;
 -webkit-border-radius: 0px;
@@ -109,16 +109,18 @@ text-align: left;
 font-family: lato;
 }
 .bubbleWrap{
-	height:280px;
-	width:550px;
+
 	overflow: hidden;
 	display: inline-block;
+	padding-bottom: 25px;
 }
 .bubbleWrap > .bubbleOwner{
 padding-top: 30px;
 font-family: lato;
-font-size: 26px;
-margin-left: -350px;
+font-size: 20px;
+width: 61%;
+margin: auto;
+text-align: left;
 }
 .bubble:after 
 {
@@ -241,7 +243,7 @@ margin-top: 40%;
 #dropdown{
 	display: none;
 }
-#gabriel{
+/*#gabriel{
 margin-left: -200px;	
 }
 #tom{
@@ -249,7 +251,7 @@ margin-left: -200px;
 }
 #sue{
 	margin-left:-350px;
-}
+}*/
 }
 @media handheld,screen and (max-width: 750px) {
 	/*
@@ -423,9 +425,9 @@ text-align:center;
 	}
 	#hamburger{
 		float: right;
-		margin-right: 45px;
-		margin-top: 30px;
-		cursor:pointer;
+		margin-right: 30px;
+		margin-top: 55px;
+		cursor: pointer;
 	}
 	#hamburger > img{
 		width: 45px;
@@ -560,7 +562,30 @@ cursor: pointer;
 	/*
 	Desktops
 	*/
-
+	.individualPicWrapper{
+		width:100%;
+		height:300px;
+	}
+	.individualPic{
+		margin-left: 50px;
+		margin-top: 50px;
+		float: left;
+		text-align: center;
+		overflow: hidden;
+		padding-bottom: 50px;
+	}
+	.individualPic > img{
+		width:100px;
+		height:100px;
+		border-radius: 50%;
+	}
+	.individualPicName{
+		width:100%;
+		text-align: center;
+		font-family: Roboto;
+		font-size: 15px;
+		color:rgb(1,86,119);
+	}
 	#wrapper {
 		background-color: #fff;
 		width: 100%;
@@ -853,6 +878,30 @@ cursor: pointer;
 	/*
 	Mobile devices
 	*/
+	.individualPicWrapper{
+		width:100%;
+		height:300px;
+	}
+	.individualPic{
+		margin-top: 50px;
+		width:100%;
+		float: left;
+		text-align: center;
+		overflow: hidden;
+		padding-bottom: 50px;
+	}
+	.individualPic > img{
+		width:200px;
+		height:200px;
+		border-radius: 50%;
+	}
+	.individualPicName{
+		width:100%;
+		text-align: center;
+		font-family: Roboto;
+		font-size: 20px;
+		color:rgb(1,86,119);
+	}
 		.aboutBreak{
 		width: 100%;
 		height: 200px;
