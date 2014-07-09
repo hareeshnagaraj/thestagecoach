@@ -783,9 +783,23 @@ cursor: pointer;
 		font-family: lato;
 		font-size: 15px;
 		margin:30px;
+		position: relative;
+	}
+	.imageSubTitle{
+		position: absolute;
+		bottom:0;
+		height:50px;
+		width:100%;
+		background-color: rgba(42,42,42,0.9);
+		color:white;
+		text-align: left;
+		overflow: hidden;
+	}
+	.imageSubTitle > div{
+		margin:12px;
 	}
 	.imageContainer > img{
-		width:300px;
+		height:225px;
 		cursor:pointer;
 	}
    .workLeft > .leftitem > div{

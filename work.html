@@ -76,7 +76,7 @@ margin-top: 6px;
 <script>
 var drop = 0;
 
-var pics = ['after_guest_bedroom.jpg','after_foyer.jpg','after_bathroom.jpg','after_bathroom2.jpg','after_bedroom.jpg','after_bedroom2.jpg','after_living.jpg','after_living2.jpg','living room before (view 2).jpg','living room after (view 2).jpg','basement before (view 2).jpg','basement after (view 2).jpg','basement before (view 3).jpg','basement after (view 3).jpg','preteen room after.jpg','black and red br before.jpg','black and red bedroom after.jpg','Red DR.jpg','Ellen\'s kitchen.jpg','Ellen\'s kitchen 2.jpg','Ellen\'s DR.jpg','study.jpg'];
+var pics = ['after_guest_bedroom.jpg','after_foyer.jpg','after_bathroom.jpg','after_bathroom2.jpg','after_bedroom.jpg','after_bedroom2.jpg','Ellen\'s LR.jpg','after_living2.jpg','living room before (view 2).jpg','living room after (view 2).jpg','basement before (view 2).jpg','basement after (view 2).jpg','basement before (view 3).jpg','basement after (view 3).jpg','preteen room after.jpg','black and red br before.jpg','black and red bedroom after.jpg','Red DR.jpg','Ellen\'s kitchen.jpg','Ellen\'s kitchen 2.jpg','Ellen\'s DR.jpg','study.jpg','preteen room before.jpg'];
 
 $(document).ready(function(){
 	$("#downArrow").click(function(){
@@ -101,7 +101,7 @@ $(document).ready(function(){
 	});
 	$("#modalpic").click(function(){
 		count++;
-		if(count >= (pics.length - 1) ){
+		if(count >= (pics.length ) ){
 			count = 0;
 		
 		}
@@ -140,12 +140,12 @@ $(document).ready(function(){
 	</ul>
 	<div id="hamburger"><img src="img/hamburger_green.png" /></div>
 	<div id="dropdown">
-		<div>About Us</div>
-		<div>Our Work</div>
-		<div>Services</div>
-		<div>Testimonials</div>
-		<div>Contact</div>
-
+		<div><a href="about2.html">About Us</a></div>
+		<div><a href="about.html">What We Do</a></div>
+		<div><a href="work.html">Our Work</a></div>
+		<div><a href="services.html">Services</a></div>
+		<div><a href="testimonials.html">Testimonials</a></div>
+		<div><a href="contact.html">Contact</a></div>
 	</div>
 </div>
 <div class="workWrap">
@@ -167,132 +167,135 @@ $(document).ready(function(){
 
 		<div class="imageContainer">
 		<img style="width:301px;" onclick="modal('portfolio/after_guest_bedroom.jpg',0)" src="portfolio/after_guest_bedroom.jpg"/>
-		<br>Guest Bedroom After
+		<br>
 		</div>
 
 		<div class="imageContainer">
 		<img style="width:338px;" onclick="modal('portfolio/after_foyer.jpg',1)" src="portfolio/after_foyer.jpg"/>
-		<br>Foyer After
+		<br>
 		</div>
 		
 
 		<div class="imageContainer" >
-		<img style="height:200px;width:initial;" onclick="modal('portfolio/after_bathroom.jpg',2)" src="portfolio/after_bathroom.jpg"/>
-		<br>Bathroom After 1
+		<img style="height:225px;width:initial;" onclick="modal('portfolio/after_bathroom.jpg',2)" src="portfolio/after_bathroom.jpg"/>
+		<br>
 		</div>
 
 
 		<div class="imageContainer">
 		<img style="width:301px;" onclick="modal('portfolio/after_bathroom2.jpg',3)" src="portfolio/after_bathroom2.jpg"/>
-		<br>Bathroom After 2
+		<br>
 		</div>
 
 
 		<div class="imageContainer">
 		<img style="width:301px;" onclick="modal('portfolio/after_bedroom.jpg',4)" src="portfolio/after_bedroom.jpg"/>
-		<br>Bedroom After
+		<br>
 		</div>
 		
 
 		<div class="imageContainer" >
 		<img style="height:200px;width:initial;" onclick="modal('portfolio/after_bedroom2.jpg',5)" src="portfolio/after_bedroom2.jpg"/>
-		<br>Bedroom After 2
+		<br>
 		</div>
 		<br>
 
 		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_living.jpg',6)" src="portfolio/after_living.jpg"/>
-		<br>Living Room After
+		<img style="height:225px;" onclick="modal('portfolio/Ellen\'s LR.jpg',6)" src="portfolio/Ellen's LR.jpg"/>
+		<br>
 		</div>
 
 		<div class="imageContainer">
-		<img style="width:301px;" onclick="modal('portfolio/after_living2.jpg',7)" src="portfolio/after_living2.jpg"/>
-		<br>Living Room After 2
+		<img style="height:225px;" onclick="modal('portfolio/after_living2.jpg',7)" src="portfolio/after_living2.jpg"/>
+		<br>
+		</div>
+		
+		<div class="imageContainer">
+		<img style="height:225px" onclick="modal('portfolio/Ellen\'s kitchen.jpg',18)" src="portfolio/Ellen's kitchen.jpg"/>
+		<br>
+		</div>
+
+		<div class="imageContainer">
+		<img style="height:225px;" onclick="modal('portfolio/Ellen\'s kitchen 2.jpg',19)" src="portfolio/Ellen's kitchen 2.jpg"/>
+		<br>
+		</div>
+		
+		<div class="imageContainer">
+		<img style="height:225px;" onclick="modal('portfolio/Ellen\'s DR.jpg',20)" src="portfolio/Ellen's DR.jpg"/>
+		<br>
 		</div>
 		
 
+		<div class="imageContainer">
+		<img style="" onclick="modal('portfolio/study.jpg',21)" src="portfolio/study.jpg"/>
+		<br>
+		</div>
+
+		<div class="imageContainer">
+		<img style="" onclick="modal('portfolio/Red DR.jpg',17)" src="portfolio/Red DR.jpg"/>
+		<br>
+		</div>
+		<br>
+		
+		<!-- Start of Before & Afters  -->
+		<div id="title" style="margin-top:20px;">BEFORE & AFTERS</div>
+
+		
 		<div class="imageContainer">
 		<img onclick="modal('portfolio/living room before (view 2).jpg',8)" src="portfolio/living room before (view 2).jpg"/>
-		<br>Living Room Before
+		<div class="imageSubTitle"><div>BEFORE</div></div>
+		</div>
+		
+		<div class="imageContainer">
+		<img style="" onclick="modal('portfolio/living room after (view 2).jpg',9)" src="portfolio/living room after (view 2).jpg"/>
+		<div class="imageSubTitle"><div>AFTER</div></div>
 		</div>
 		<br>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/living room after (view 2).jpg',9)" src="portfolio/living room after (view 2).jpg"/>
-		<br>Living Room After
-		</div>
 		
-		
-
 		<div class="imageContainer">
 		<img onclick="modal('portfolio/basement before (view 2).jpg',10)" src="portfolio/basement before (view 2).jpg"/>
-		<br>Basement Before 1
+		<div class="imageSubTitle"><div>BEFORE</div></div>
 		</div>
 
 		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/basement after (view 2).jpg',11)" src="portfolio/basement after (view 2).jpg"/>
-		<br>Basement After 1
+		<img style="" onclick="modal('portfolio/basement after (view 2).jpg',11)" src="portfolio/basement after (view 2).jpg"/>
+		<div class="imageSubTitle"><div>AFTER</div></div>
 		</div>
+		<br>
 		
 
 		<div class="imageContainer">
 		<img onclick="modal('portfolio/basement before (view 3).jpg',12)" src="portfolio/basement before (view 3).jpg"/>
-		<br>Basement Before 2
+		<div class="imageSubTitle"><div>BEFORE</div></div>
 		</div>
 
 		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/basement after (view 3).jpg',13)" src="portfolio/basement after (view 3).jpg"/>
-		<br>Basement After 2
+		<img style="" onclick="modal('portfolio/basement after (view 3).jpg',13)" src="portfolio/basement after (view 3).jpg"/>
+		<div class="imageSubTitle"><div>AFTER</div></div>
+		</div>
+		<br>
+
+		<div class="imageContainer">
+		<img style="height:225px;" onclick="modal('portfolio/preteen room before.jpg',22)" src="portfolio/preteen room before.jpg"/>
+		<div class="imageSubTitle"><div>BEFORE</div></div>
 		</div>
 		
 		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/preteen room after.jpg',14)" src="portfolio/preteen room after.jpg"/>
-		<br>Preteen Room After
+		<img style="" onclick="modal('portfolio/preteen room after.jpg',14)" src="portfolio/preteen room after.jpg"/>
+		<div class="imageSubTitle"><div>AFTER</div></div>
 		</div>
 		<br>
 
 		<div class="imageContainer">
 		<img onclick="modal('portfolio/black and red br before.jpg',15)" src="portfolio/black and red br before.jpg"/>
-		<br>Basement Before 2
+		<div class="imageSubTitle"><div>BEFORE</div></div>
 		</div>
 
 		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/black and red bedroom after.jpg',16)" src="portfolio/black and red bedroom after.jpg"/>
-		<br>Basement After 2
-		</div>
-		
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/Red DR.jpg',17)" src="portfolio/Red DR.jpg"/>
-		<br>Preteen Room After
+		<img style="" onclick="modal('portfolio/black and red bedroom after.jpg',16)" src="portfolio/black and red bedroom after.jpg"/>
+		<div class="imageSubTitle"><div>AFTER</div></div>
 		</div>
 		<br>
-
-		<div class="imageContainer">
-		<img onclick="modal('portfolio/Ellen\'s kitchen.jpg',18)" src="portfolio/Ellen's kitchen.jpg"/>
-		<br>Basement Before 2
-		</div>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/Ellen\'s kitchen 2.jpg',19)" src="portfolio/Ellen's kitchen 2.jpg"/>
-		<br>Basement After 2
-		</div>
-		
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/Ellen\'s DR.jpg',20)" src="portfolio/Ellen's DR.jpg"/>
-		<br>Preteen Room After
-		</div>
-		<br>
-
-		<div class="imageContainer">
-		<img style="width:338px;" onclick="modal('portfolio/study.jpg',21)" src="portfolio/study.jpg"/>
-		<br>Preteen Room After
-		</div>
-		<br>
-		
-
-
-
-	
 
 		</div>
 	</div>
